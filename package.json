@@ -1,0 +1,16 @@
+{
+  "name": "Grid-SCSS",
+  "version": "1.0.0",
+  "description": "Simple Grid with SCSS",
+  "license": "-",
+  "author": "Indiorlei",
+  "repository":{
+    "type" : "GIT",
+    "url": "https://github.com/indiorlei/grid-scss"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-sass": "^2.0.4"
+  }
+}

@@ -1,0 +1,61 @@
+$gap: 10px;
+$gridsize: 12;
+$breakpoints: ("small":768px, "medium":1024px, "large":1200px);
+
+html {
+  box-sizing: border-box;
+  font-family: Quicksand;
+}
+div{
+  height:50px;
+  padding:10px;
+  border:1px solid #fff;
+}
+.div-1{
+  background-color:#1add5f;
+  color:#121e36;
+}
+.div-2{
+  background-color:#121e36;
+  color:#1add5f;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.row {
+  margin-left: -1*$gap;
+  margin-right: -1*$gap;
+
+  &:after {
+    content: '';
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+.column {
+  display: inline;
+  vertical-align: baseline;
+  padding-left: $gap;
+  padding-right: $gap;
+  float: left;
+}
+
+@for $i from 1 through $gridsize {
+  .column-#{$i}{
+    width:  ( $i /$gridsize ) *100%;
+  }
+}
+
+
+@each $slug, $size in $breakpoints{
+  @media (max-width: #{$size}) {
+    @for $i from 1 through $gridsize {
+      .column-#{$slug}-#{$i} {
+        width:  ( $i /$gridsize ) *100%
+      }
+    }
+  }
+}
